@@ -1,4 +1,5 @@
 ﻿@{
+    // esta é uma linha de comentário em C# 
     ViewData["Title"] = "Bem Vindo";
 }
 
@@ -13,13 +14,29 @@
 <form>
     @*
         Este comentário SÓ SERÁ visível no Visual Studio
-        neste formulário falta aplicar CSS às 'textboxs' e ao 'bootão'
+        neste formulário falta aplicar CSS às 'textboxs' e ao 'botão'
     *@
     <div>
-        Especifique, poor favor, os coeficientes da equação: <br/>
-        A: <input type="text" /> <br/>
-        B: <input type="text" /> <br/>
-        C: <input type="text" /> <br/>
+        Especifique, por favor, os coeficientes da equação: <br/>
+        @*
+            o ID é um identificador que é lido APENAS no BROWSER
+            o NAME é lido no SERVIDOR
+        *@
+        A: <input type="text" id="A" name="A" /> <br/>
+        B: <input type="text" name="B" /> <br />
+        C: <input type="text" name="C" /> <br />
         <input type="submit" value="Calcular"/>
     </div>
 </form>
+
+@*
+    ler o conteúdo das ViewBag
+*@
+
+<div>
+    &nbsp; <br/>
+    @ViewBag.Mensagem <br />
+    x1 = @ViewBag.X1 <br />
+    x2 = @ViewBag.X2
+
+</div>
